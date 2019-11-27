@@ -1,5 +1,11 @@
 <?php require 'inc/data/products.php'; ?>
-<?php require 'inc/head.php'; ?>
+<?php require 'inc/head.php';
+
+if (empty($_GET)){
+} else{
+    setcookie('cart', $_GET['add_to_cart']);
+}
+?>
 <section class="cookies container-fluid">
     <div class="row">
         <?php foreach ($catalog as $id => $cookie) { ?>
@@ -15,7 +21,8 @@
                     </figcaption>
                 </figure>
             </div>
-        <?php } ?>
+        <?php }
+        ?>
     </div>
 </section>
 <?php require 'inc/foot.php'; ?>
